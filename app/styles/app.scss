@@ -1,0 +1,70 @@
+$primary: 'red';
+
+@import 'ember-material-design';
+//@import 'reset.css';
+
+
+$font-base-size:	12px;
+
+$color-text-base: 		black;
+$color-background-base: #FAFADF;
+
+$break-mobile: 768px;
+$break-tablet: 992px;
+$break-desktop: 12000px;
+
+body{
+	font-size: $font-base-size;
+	background-color: $color-background-base;
+	color: $color-text-base;
+
+	padding: 0 10px;
+	header{
+		overflow: hidden;
+		.application-search{
+			float:left;
+			width: 40%;
+		}
+		.application-login{
+			float:right;
+			.application-login-input{
+				float:left;
+				md-input-container{
+					float:left;
+				}
+			}
+			.application-login-action{
+				margin: 10px 5px;
+				float: right;
+			}
+		}
+	}
+	.application-content{
+		height: 800px;
+	}
+}
+
+// Screen for mobile devices
+@media screen and (max-width: $break-mobile){
+
+}
+
+// Screen for tablet devices
+@media screen and (min-width: $break-mobile+1) and (max-width: $break-tablet){
+}
+
+// Screen for desktop devices
+@media screen and (min-width: $break-tablet+1) and (max-width: $break-desktop){
+}
+
+// Screen for jumbo devices
+@media screen and (min-width: $break-desktop+1){
+	
+}
+
+md-input-container{
+	label{
+		font-size: 1.3em;
+	}
+}
+

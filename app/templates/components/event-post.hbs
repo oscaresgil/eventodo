@@ -1,0 +1,14 @@
+<a class="event-post-link" href=""><img src="{{source_image}}" alt="{{title}}"></a>
+<md-card-content>
+	<h1>{{title}}</h1>
+	<a class="event-post-user-link" href="">{{user_path}}</a>
+</md-card-content>
+<div>
+	{{#each tags as |tag|}}
+		{{#md-button action='tag_click'}}{{tag.title}}{{/md-button}}
+	{{/each}}
+</div>
+<div class="md-button-actions" layout="row" layout-align="end">
+    {{#md-button}}More..{{/md-button}}
+    {{#md-button class="md-raised md-primary"}}VOOOII{{/md-button}}
+</div>

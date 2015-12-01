@@ -1,3 +1,59 @@
-<h2 id="title">Welcome to Ember</h2>
+<!-- https://github.com/hhff/ember-infinity -->
 
-{{outlet}}
+<header>
+	{{#md-input-container class="application-search" flex=''}}
+        <label>Search</label>
+        {{md-input}}
+    {{/md-input-container}}
+	<div class="application-login">
+		<div class="application-login-input">
+		    {{#md-input-container flex='' }}
+		        <label>Address</label>
+		        {{md-input}}
+		    {{/md-input-container}}
+		    {{#md-input-container flex=''}}
+		        <label>Password</label>
+		        {{md-input type="password"}}
+		    {{/md-input-container}}
+	    </div>
+		<div class="application-login-action">
+		    {{#md-button}}Log In{{/md-button}}
+		    {{#md-button classNames="md-raised md-primary"}}Register{{/md-button}}
+	   </div>
+	</div>
+</header>
+
+<div layout="row" flex>
+	
+	{{#unless media.isDesktop}}
+		{{#md-button class="md-fab md-primary" action='toggleSidebarLeft' aria-label="Eat cake"}}
+            {{md-icon md-svg-src=""}}
+        {{/md-button}}
+	{{/unless}}
+
+	{{#md-sidenav class="md-sidenav-left md-whiteframe-z2"
+	isLockedOpen=sidebarLeftLocked
+    sidebarVisible=sidebarLeftVisible}}
+	    {{#md-toolbar}}
+	        <h1 class="md-toolbar-tools">Categories</h1>
+	    {{/md-toolbar}}
+	    <md-content layout-padding ng-controller="LeftCtrl">
+
+	        {{#md-button class="md-raised md-primary"}}
+	        	Musica
+	        {{/md-button}}
+	        {{#md-button class="md-raised md-primary"}}
+	        	Juegos
+	        {{/md-button}}
+	    </md-content>
+
+	{{/md-sidenav}}
+
+	<md-content class="application-content md-padding">
+		{{outlet}}
+	</md-content>
+</div>
+
+<footer>
+	&copy;2015 Objective Four.
+</footer>
