@@ -5,9 +5,17 @@ export default Ember.Controller.extend({
 	sidebarLeftLocked: Ember.computed('media.isDesktop', function() {
 		return this.get('media.isDesktop');
 	}),
-	actions:{
+	fab_dial: {
+		isOpen: false,
+		selectedMode: 'md-scale',
+		selectedDirection: 'left'
+	},
+	actions: {
 		toggleSidebarLeft: function(){
 			this.toggleProperty('sidebarLeftVisible');
-		}
+		},
+		toggleSearchBar: function(){
+			alert('search');
+		},
 	}
 });

@@ -12,6 +12,14 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self'",
+      'font-src': "'self' ",
+      'connect-src': "'self' http://104.236.74.55:8000",
+      'img-src': "'self'",
+      'style-src': "'self'",
+    },
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -25,6 +33,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    /*ENV['simple-auth'] = {
+      store: 'simple-auth-session-store:local-storage',
+      authorizer: 'authorizer:login_auth',
+      crossOriginWhitelist: ['http://localhost:3001/'],
+      routeAfterAuthentication: '/protected'
+    };*/
   }
 
   if (environment === 'test') {

@@ -1,8 +1,8 @@
 $primary: 'red';
+$accent: 'blue';
 
 @import 'ember-material-design';
-//@import 'reset.css';
-
+@import 'reset.css';
 
 $font-base-size:	12px;
 
@@ -13,53 +13,74 @@ $break-mobile: 768px;
 $break-tablet: 992px;
 $break-desktop: 12000px;
 
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+html{
+	overflow-x: hidden;
+}	
 body{
+	min-width: 500px;
 	font-size: $font-base-size;
 	background-color: $color-background-base;
 	color: $color-text-base;
 
-	padding: 0 10px;
+	
 	header{
 		overflow: hidden;
+		margin: 2px 0px;
 		.application-search{
+			overflow: hidden;
 			float:left;
-			width: 40%;
+			margin-left: 10px;
+			.application-search-icon,.application-search-input{
+				float:left;
+			}
+			.application-search-icon{
+				margin-top: 28px;
+				margin-right: 5px;
+			}
+			.application-search-input{
+				float:left;
+			}
 		}
 		.application-login{
+			overflow: hidden;
 			float:right;
-			.application-login-input{
+			.login-input{
 				float:left;
 				md-input-container{
 					float:left;
 				}
 			}
-			.application-login-action{
-				margin: 10px 5px;
-				float: right;
-			}
+			.login-action{}
+		}
+		.login-action{}
+	}
+	.section-event{
+		h1{
+			font-size: 3em;
 		}
 	}
-	.application-content{
-		height: 800px;
+}
+
+.login-action{
+	a{
+		text-decoration: none;
 	}
+	float: right;
+	margin: 10px 5px;
 }
 
 // Screen for mobile devices
-@media screen and (max-width: $break-mobile){
-
-}
-
-// Screen for tablet devices
-@media screen and (min-width: $break-mobile+1) and (max-width: $break-tablet){
+@media screen and (max-width: $break-tablet){
 }
 
 // Screen for desktop devices
-@media screen and (min-width: $break-tablet+1) and (max-width: $break-desktop){
-}
-
-// Screen for jumbo devices
-@media screen and (min-width: $break-desktop+1){
-	
+@media screen and (min-width: $break-tablet+1) {
 }
 
 md-input-container{
@@ -67,4 +88,6 @@ md-input-container{
 		font-size: 1.3em;
 	}
 }
-
+md-backdrop{
+	height:100%;
+}
